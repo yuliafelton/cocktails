@@ -3,6 +3,11 @@ import "./Heading.css";
 import { Link } from "react-router-dom";
 
 function Heading() {
+
+    const headerStyle = {
+        textDecoration: "none",
+    };
+
   return (
     <div className="App-header">
       <Link style={headerStyle} to="/">
@@ -15,9 +20,5 @@ function Heading() {
     </div>
   );
 }
-
-const headerStyle = {
-  textDecoration: "none",
-};
 
 export default Heading;

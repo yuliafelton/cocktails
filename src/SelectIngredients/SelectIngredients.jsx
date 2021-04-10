@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from "react";
-import "./Select.css";
+import React, { useCallback, useState, useMemo } from "react";
+import "./SelectIngredients.css";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
@@ -31,11 +31,10 @@ const useStyles = makeStyles((theme) => ({
   error: {},
 }));
 
-function SelectForm({ ingredientsList, selectedIngredients, dispatch }) {
+function SelectIngredients({ ingredientsList, selectedIngredients, dispatch }) {
   const classes = useStyles();
 
-  // TODO: useMemo
-  const selectedIngredientsList = React.useMemo(
+  const selectedIngredientsList = useMemo(
     () =>
       ingredientsList.filter(
         (ingredient) => !selectedIngredients.includes(ingredient)
@@ -43,7 +42,6 @@ function SelectForm({ ingredientsList, selectedIngredients, dispatch }) {
     [ingredientsList, selectedIngredients]
   );
 
-  // TODO: useCallback
   const handleChange = useCallback(
     (event) => {
       dispatch(selectIngredient(event.target.value));
@@ -76,9 +74,9 @@ function SelectForm({ ingredientsList, selectedIngredients, dispatch }) {
 
 const mapStateToProps = (state) => {
   return {
-    ingredientsList: state.ingredients.ingredientsList,
-    selectedIngredients: state.ingredients.selectedIngredients,
+    ingredientsList: state.ingredientsList,
+    selectedIngredients: state.selectedIngredients,
   };
 };
 
-export default connect(mapStateToProps)(SelectForm);
+export default connect(mapStateToProps)(SelectIngredients);

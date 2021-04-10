@@ -10,8 +10,9 @@ export const fetchCocktails = () => (dispatch) => {
   fetch(cocktailsUrl)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      return dispatch({ type: FETCH_COCKTAILS_SUCCESS, payload: "data" });
+      return dispatch({ type: FETCH_COCKTAILS_SUCCESS, payload: data });
     })
     .catch((err) => dispatch({ type: FETCH_COCKTAILS_FAIL, payload: err }));
 };
+
+

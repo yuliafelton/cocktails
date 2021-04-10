@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Nav.css";
+import "./Navigation.css";
 
-function Nav() {
+function Navigation() {
   return (
     <nav>
-      <div className="nav-links, links-style">
+      <div className="nav-links links-style">
         <Link className="nav-style" to="/ingredients">
           <h4>Find by ingredients</h4>
         </Link>
@@ -17,4 +17,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Navigation;

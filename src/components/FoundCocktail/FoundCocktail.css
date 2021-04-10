@@ -1,0 +1,10 @@
+.found-cocktail-box {
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 25px;
+    ;
+}
+
+.cocktail-recipe {
+    list-style-type: none;
+}

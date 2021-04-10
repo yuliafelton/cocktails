@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ChipsArray({ selectedIngredients, dispatch }) {
+function IngredientItems({ selectedIngredients, dispatch }) {
   const classes = useStyles();
 
   const handleDelete = useCallback(
@@ -51,8 +51,8 @@ function ChipsArray({ selectedIngredients, dispatch }) {
 
 const mapStateToProps = (state) => {
   return {
-    selectedIngredients: state.ingredients.selectedIngredients,
+    selectedIngredients: state.selectedIngredients,
   };
 };
 
-export default connect(mapStateToProps)(ChipsArray);
+export default connect(mapStateToProps)(IngredientItems);
